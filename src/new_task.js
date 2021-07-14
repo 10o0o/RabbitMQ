@@ -6,19 +6,22 @@ amqp.connect('amqp://localhost', (err0, connection) => {
   connection.createChannel((err1, channel) => {
     if (err1) throw err1;
 
-    const queue = 'hello';
-    const msg = 'Hello world';
+    const queue = 'task_queue';
+    const msg = process.argv.slice(2).join(" ") || "Hello World!";
 
     channel.assertQueue(queue, {
-      durable: false,
+      durable: true,
     });
-
-    channel.sendToQueue(queue, Buffer.from(msg));
-    console.log(`[x] Sent ${msg}`);
+    
+    channel.sendToQueue(queue, Buffer.from(msg), {
+      persistent: true,
+    })
+    
+    console.log(" [x] Sent '%s'", msg);
   });
 
   // 왜 async await 아무 효과 없는데 setTimeout 썼지?
-  setTimeout(() => {
+  setTimeout(function() {
     connection.close();
     process.exit(0);
   }, 500);
