@@ -20,6 +20,4 @@ amqp.connect('amqp://localhost', (err0, connection) => {
       noAck: true,
     });
   })
-
-  
 });
