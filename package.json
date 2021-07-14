@@ -1,0 +1,22 @@
+{
+  "name": "rabbitmq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/10o0o/RabbitMQ.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/10o0o/RabbitMQ/issues"
+  },
+  "homepage": "https://github.com/10o0o/RabbitMQ#readme",
+  "dependencies": {
+    "amqplib": "^0.8.0"
+  }
+}
