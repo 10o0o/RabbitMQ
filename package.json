@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/10o0o/RabbitMQ#readme",
   "dependencies": {
-    "amqplib": "^0.8.0"
+    "amqplib": "^0.8.0",
+    "nodemon": "^2.0.12"
   }
 }
