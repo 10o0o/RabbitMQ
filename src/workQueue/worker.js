@@ -1,4 +1,4 @@
-import { connect } from s'amqplib/callback_api';
+import { connect } from 'amqplib/callback_api';
 
 connect('amqp://localhost', (err0, connection) => {
   if (err0) throw err0;
