@@ -1,6 +1,6 @@
-import { connect } from 'amqplib/callback_api';
+const amqp = require('amqplib/callback_api');
 
-connect('amqp://localhost', (err0, connection) => {
+amqp.connect('amqp://localhost', (err0, connection) => {
   if (err0) throw err0;
 
   connection.createChannel((err1, channel) => {
@@ -16,6 +16,7 @@ connect('amqp://localhost', (err0, connection) => {
 
     channel.consume(queue, (msg) => {
       const secs = msg.content.toString().split('.').length - 1;
+      console.log(secs);
 
       console.log(`[x] Received ${msg.content.toString()}`);
       setTimeout(() => {

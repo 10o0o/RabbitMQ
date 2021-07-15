@@ -1,6 +1,6 @@
-import { connect } from 'amqplib/callback_api';
+const amqp = require('amqplib/callback_api');
 
-connect('amqp://localhost', (err0, connection) => {
+amqp.connect('amqp://localhost', (err0, connection) => {
   if (err0) throw err0;
 
   connection.createChannel(async (err1, channel) => {
